@@ -1,5 +1,25 @@
 {
-    "navigationFallback": {
-        "rewrite": "/index.html"
-    }
-}
+   "trailingSlash": "auto",
+   "routes": [
+       {
+           "route": "/",
+           "rewrite": "/en/index.html",
+       },
+       {
+           "route": "/index.html",
+           "rewrite": "/en/index.html",
+
+       },
+       {
+           "route": "/en/*"
+           "rewrite": "/en/index.html",
+       },
+   ],
+   "navigationFallback": {
+       "rewrite": "/index.html",
+       "exclude": [
+           "/images/*.{png,jpg,gif,svg}",
+           "/css/*",
+           "/js/*"
+       ]
+   },
